@@ -10,7 +10,7 @@
         body { font-family: 'Kanit', sans-serif; }
         .slider-container {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .slider-item {
             min-width: 100%;
@@ -27,46 +27,61 @@
 
     <main class="max-w-4xl mx-auto p-6 md:p-12">
         
-        <!-- Image Folder (Slider) Section -->
+        <!-- Image Gallery Section (GitHub Images) -->
         <div class="mb-10">
             <h3 class="text-xl font-semibold text-green-800 mb-4 flex items-center">
-                <span class="mr-2">📂</span> อัลบั้มรูปภาพบ้าน
+                <span class="mr-2">📂</span> 
             </h3>
             
-            <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-black group">
-                <!-- Slides -->
-                <!-- วิธีใช้รูปจาก GitHub: เปลี่ยน URL ด้านล่างเป็น https://raw.githubusercontent.com/ชื่อผู้ใช้/ชื่อโปรเจกต์/main/images/ชื่อรูป.jpg -->
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-gray-200 group">
+                <!-- Slides Container -->
+                <!-- ดึงรูปจากโฟลเดอร์ images/ ชื่อไฟล์ 1.jpg ถึง 8.jpg -->
                 <div id="slider" class="slider-container">
-                    <div class="slider-item h-64 md:h-[450px]">
-                        <img src="images/house-front.jpg" onerror="this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="หน้าบ้าน">
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/1.jpg" onerror="this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 1">
                     </div>
-                    <div class="slider-item h-64 md:h-[450px]">
-                        <img src="images/bedroom-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="ห้องนอน">
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/2.jpg" onerror="this.src='https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 2">
                     </div>
-                    <div class="slider-item h-64 md:h-[450px]">
-                        <img src="images/bathroom.jpg" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="ห้องน้ำ">
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/3.jpg" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 3">
                     </div>
-                    <div class="slider-item h-64 md:h-[450px]">
-                        <img src="images/living-room.jpg" onerror="this.src='https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="ห้องรับแขก">
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/4.jpg" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 4">
+                    </div>
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/5.jpg" onerror="this.src='https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 5">
+                    </div>
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/6.jpg" onerror="this.src='https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 6">
+                    </div>
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/7.jpg" onerror="this.src='https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 7">
+                    </div>
+                    <div class="slider-item h-64 md:h-[500px]">
+                        <img src="images/8.jpg" onerror="this.src='https://images.unsplash.com/photo-1502005229762-bc1300c8b0ca?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="รูปที่ 8">
                     </div>
                 </div>
 
-                <!-- Navigation Buttons -->
-                <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all">
+                <!-- Navigation Arrows -->
+                <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10">
                     <svg class="w-6 h-6 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all">
+                <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10">
                     <svg class="w-6 h-6 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
 
-                <!-- Indicators -->
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
-                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
-                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
-                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
+                <!-- Status Overlay (Current/Total) -->
+                <div class="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-lg text-sm font-medium">
+                    <span id="current-index">1</span> / <span id="total-index">8</span>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div id="dot-container" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <!-- Dots will be generated via JS -->
                 </div>
             </div>
+            <p class="text-center text-gray-400 text-xs mt-3 italic">* หากรูปไม่แสดง โปรดตรวจสอบว่าไฟล์ 1.jpg ถึง 8.jpg อยู่ในโฟลเดอร์ images เรียบร้อยแล้ว</p>
         </div>
 
         <!-- Highlights Card -->
@@ -78,7 +93,7 @@
                         <h2 class="text-2xl font-bold mt-2 text-green-900">พื้นที่ 20 ตร.วา พร้อมเข้าอยู่ 9 มีนาคม นี้</h2>
                     </div>
                     <div class="mt-4 md:mt-0 text-right">
-                        <p class="text-gray-500 text-sm uppercase">ค่าเช่าเพียง</p>
+                        <p class="text-gray-500 text-sm uppercase font-medium">ค่าเช่าเพียง</p>
                         <p class="text-4xl font-bold text-green-600">8,000 <span class="text-lg">บาท/เดือน</span></p>
                     </div>
                 </div>
@@ -86,55 +101,81 @@
                 <!-- Icons Summary -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-gray-100">
                     <div class="text-center">
-                        <div class="text-green-600 mb-1">🛏️</div>
+                        <div class="text-2xl mb-1">🛏️</div>
                         <p class="text-sm font-medium">2 ห้องนอน</p>
                     </div>
                     <div class="text-center border-l border-gray-100">
-                        <div class="text-green-600 mb-1">🚿</div>
+                        <div class="text-2xl mb-1">🚿</div>
                         <p class="text-sm font-medium">2 ห้องน้ำ</p>
                     </div>
                     <div class="text-center border-l border-gray-100">
-                        <div class="text-green-600 mb-1">🚗</div>
+                        <div class="text-2xl mb-1">🚗</div>
                         <p class="text-sm font-medium">มีที่จอดรถ</p>
                     </div>
                     <div class="text-center border-l border-gray-100">
-                        <div class="text-green-600 mb-1">🌬️</div>
+                        <div class="text-2xl mb-1">🌬️</div>
                         <p class="text-sm font-medium">แอร์ + ระบายอากาศ</p>
                     </div>
                 </div>
 
-                <!-- Description -->
-                <div class="mt-8 space-y-6">
+                <!-- Description Details -->
+                <div class="mt-8 space-y-8">
                     <div>
-                        <h3 class="text-xl font-semibold text-green-800 mb-3">รายละเอียดบ้าน</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
-                            <li><strong>ห้องนอนใหญ่:</strong> กว้างขวาง มีเครื่องปรับอากาศเย็นสบาย</li>
-                            <li><strong>ห้องนอนเล็ก:</strong> เหมาะสำหรับทำห้องทำงาน หรือห้องนอนสำรอง</li>
-                            <li><strong>ระบบระบายอากาศ:</strong> ทุกห้องน้ำติดตั้งพัดลมระบายอากาศ ไม่อับชื้น</li>
-                            <li><strong>ความสะดวก:</strong> ติดตั้งปั้มน้ำเรียบร้อย น้ำไหลแรงสม่ำเสมอ</li>
-                            <li><strong>ความปลอดภัย:</strong> เข้า-ออกหมู่บ้านด้วยระบบคีย์การ์ด สะดวกและปลอดภัย</li>
+                        <h3 class="text-xl font-semibold text-green-800 mb-4 flex items-center">
+                            <span class="mr-2">🏠</span> รายละเอียดตัวบ้าน
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold text-green-700">ห้องนอนใหญ่</p>
+                                <p class="text-sm">ชั้นบน กว้างขวาง มีแอร์เย็นสบาย</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold text-green-700">ห้องนอนเล็ก</p>
+                                <p class="text-sm">จัดเป็นห้องนอนหรือห้องทำงานก็ได้</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold text-green-700">ระบบน้ำ</p>
+                                <p class="text-sm">มีปั้มน้ำพร้อมใช้ น้ำไหลแรงทุกจุด</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="font-semibold text-green-700">ห้องน้ำ</p>
+                                <p class="text-sm">ติดตั้งพัดลมระบายอากาศทุกห้อง</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-2xl border-l-4 border-green-600">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">จุดเด่น/ทำเล</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-2 text-green-600">📍</span>
+                                <span><strong>หลังสุดท้ายสุดซอย:</strong> สงบมาก ไม่มีรถวิ่งผ่านหน้าบ้าน</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-green-600">🌿</span>
+                                <span><strong>อากาศดี:</strong> ติดรั้วโครงการ ติดคลองแสนแสบ ลมพัดเย็นตลอด</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-green-600">🅿️</span>
+                                <span><strong>ที่จอดรถ:</strong> หน้าบ้านไม่ติดใคร จอดรถสะดวก ไม่ขวางทางใคร</span>
+                            </li>
                         </ul>
                     </div>
 
-                    <div id="full-gallery" class="bg-green-50 p-6 rounded-xl border-l-4 border-green-600">
-                        <h3 class="text-xl font-semibold text-green-800 mb-3">จุดเด่นที่เหนือกว่า</h3>
-                        <p class="text-gray-700">
-                            <strong>บ้านหลังสุดท้ายสุดซอย:</strong> ให้ความเป็นส่วนตัวสูง เงียบสงบ ไม่มีเสียงรถวิ่งผ่านหน้าบ้านพลุกพล่าน<br>
-                            <strong>ทำเลทอง:</strong> หน้าบ้านติดรั้วโครงการและติดริมคลองแสนแสบ รับลม อากาศถ่ายเทดีมาก<br>
-                            <strong>หมดปัญหาที่จอดรถ:</strong> หน้าบ้านไม่ติดกับบ้านใคร ไม่ต้องกังวลเรื่องการจอดรถขวางหน้าบ้านกัน
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-green-800 mb-3">เงื่อนไขการเช่า</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-white border border-gray-200 p-4 rounded-lg">
-                                <p class="text-gray-500 text-sm">เงินประกัน</p>
-                                <p class="text-lg font-bold">2 เดือน</p>
+                    <div class="border-t border-gray-100 pt-8">
+                        <h3 class="text-xl font-semibold text-green-800 mb-4">สัญญาและการเข้าอยู่</h3>
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <div class="flex-1 bg-white border border-green-100 p-4 rounded-xl text-center">
+                                <p class="text-gray-500 text-sm">มัดจำ/ประกัน</p>
+                                <p class="text-xl font-bold text-green-700">2 เดือน</p>
                             </div>
-                            <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                            <div class="flex-1 bg-white border border-green-100 p-4 rounded-xl text-center">
                                 <p class="text-gray-500 text-sm">จ่ายล่วงหน้า</p>
-                                <p class="text-lg font-bold">1 เดือน</p>
+                                <p class="text-xl font-bold text-green-700">1 เดือน</p>
+                            </div>
+                            <div class="flex-1 bg-green-600 p-4 rounded-xl text-center text-white">
+                                <p class="text-green-100 text-sm">วันเข้าอยู่ได้</p>
+                                <p class="text-xl font-bold">9 มีนาคม นี้</p>
                             </div>
                         </div>
                     </div>
@@ -142,32 +183,53 @@
             </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="flex flex-col md:flex-row gap-4 mb-12">
-            <a href="tel:0995914032" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold text-lg shadow-lg transition duration-300 flex items-center justify-center">
-                📞 โทรติดต่อ: 099-591-4032
+        <!-- Contact & Maps Buttons -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <a href="tel:0995914032" class="bg-green-600 hover:bg-green-700 text-white text-center py-5 rounded-2xl font-bold text-xl shadow-lg transition duration-300 flex items-center justify-center">
+                📞 ติดต่อ: 099-591-4032
             </a>
-            <a href="https://maps.app.goo.gl/LR9QS5ugM2BnCg7j6" target="_blank" class="flex-1 bg-white border-2 border-green-600 text-green-700 text-center py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition duration-300 flex items-center justify-center">
-                📍 ดูตำแหน่งใน Google Maps
+            <a href="https://maps.app.goo.gl/LR9QS5ugM2BnCg7j6" target="_blank" class="bg-white border-2 border-green-600 text-green-700 text-center py-5 rounded-2xl font-bold text-xl hover:bg-green-50 transition duration-300 flex items-center justify-center">
+                📍 Google map ไปหมู่บ้าน
             </a>
         </div>
 
-        <footer class="text-center text-gray-500 text-sm">
-            <p>© พฤกษาวิลล์ 5 - ทาวน์เฮ้าส์ให้เช่า สภาพดี ราคาคุ้มค่า</p>
+        <footer class="text-center text-gray-400 text-sm pb-10">
+            <p>© พฤกษาวิลล์ 5 - ทาวน์เฮ้าส์ให้เช่าบรรยากาศดี</p>
         </footer>
     </main>
 
     <script>
         let currentSlide = 0;
         const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slider-item');
+        const dotContainer = document.getElementById('dot-container');
+        const currentIndexEl = document.getElementById('current-index');
+        const totalIndexEl = document.getElementById('total-index');
+        const totalSlides = slides.length;
+
+        // Generate dots based on slides
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = `dot w-2 h-2 rounded-full bg-white/50 cursor-pointer transition-all duration-300`;
+            dot.onclick = () => jumpToSlide(i);
+            dotContainer.appendChild(dot);
+        });
+
         const dots = document.querySelectorAll('.dot');
-        const totalSlides = 4;
 
         function updateSlider() {
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            currentIndexEl.textContent = currentSlide + 1;
+            totalIndexEl.textContent = totalSlides;
+            
             dots.forEach((dot, index) => {
-                dot.style.backgroundColor = index === currentSlide ? 'white' : 'rgba(255, 255, 255, 0.5)';
-                dot.style.width = index === currentSlide ? '24px' : '12px';
+                if (index === currentSlide) {
+                    dot.classList.add('bg-white', 'w-6');
+                    dot.classList.remove('bg-white/50', 'w-2');
+                } else {
+                    dot.classList.remove('bg-white', 'w-6');
+                    dot.classList.add('bg-white/50', 'w-2');
+                }
             });
         }
 
@@ -176,7 +238,11 @@
             updateSlider();
         }
 
-        // Initialize indicators
+        function jumpToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
         updateSlider();
     </script>
 </body>
