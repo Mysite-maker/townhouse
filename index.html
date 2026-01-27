@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เช่าทาวน์เฮ้าส์ พฤกษาวิลล์ 5 - บรรยากาศดี เงียบสงบ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Kanit', sans-serif; }
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-item {
+            min-width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-green-50 text-gray-800">
+
+    <!-- Hero Section -->
+    <header class="bg-green-700 text-white py-12 px-4 text-center shadow-lg">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">ให้เช่าทาวน์เฮ้าส์ 2 ชั้น</h1>
+        <p class="text-xl md:text-2xl opacity-90">หมู่บ้านพฤกษาวิลล์ 5 (หลังสุดท้าย สุดซอย)</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6 md:p-12">
+        
+        <!-- Image Folder (Slider) Section -->
+        <div class="mb-10">
+            <h3 class="text-xl font-semibold text-green-800 mb-4 flex items-center">
+                <span class="mr-2">📂</span> อัลบั้มรูปภาพบ้าน
+            </h3>
+            
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-black group">
+                <!-- Slides -->
+                <!-- วิธีใช้รูปจาก GitHub: เปลี่ยน URL ด้านล่างเป็น https://raw.githubusercontent.com/ชื่อผู้ใช้/ชื่อโปรเจกต์/main/images/ชื่อรูป.jpg -->
+                <div id="slider" class="slider-container">
+                    <div class="slider-item h-64 md:h-[450px]">
+                        <img src="images/house-front.jpg" onerror="this.src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="หน้าบ้าน">
+                    </div>
+                    <div class="slider-item h-64 md:h-[450px]">
+                        <img src="images/bedroom-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="ห้องนอน">
+                    </div>
+                    <div class="slider-item h-64 md:h-[450px]">
+                        <img src="images/bathroom.jpg" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="ห้องน้ำ">
+                    </div>
+                    <div class="slider-item h-64 md:h-[450px]">
+                        <img src="images/living-room.jpg" onerror="this.src='https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80'" class="w-full h-full object-cover" alt="ห้องรับแขก">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all">
+                    <svg class="w-6 h-6 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all">
+                    <svg class="w-6 h-6 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
+                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
+                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
+                    <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-all"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlights Card -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-10 border border-green-100">
+            <div class="p-8">
+                <div class="flex flex-wrap justify-between items-center mb-6">
+                    <div>
+                        <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full uppercase">ว่างให้เช่า</span>
+                        <h2 class="text-2xl font-bold mt-2 text-green-900">พื้นที่ 20 ตร.วา พร้อมเข้าอยู่ 9 มีนาคม นี้</h2>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <p class="text-gray-500 text-sm uppercase">ค่าเช่าเพียง</p>
+                        <p class="text-4xl font-bold text-green-600">8,000 <span class="text-lg">บาท/เดือน</span></p>
+                    </div>
+                </div>
+
+                <!-- Icons Summary -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-gray-100">
+                    <div class="text-center">
+                        <div class="text-green-600 mb-1">🛏️</div>
+                        <p class="text-sm font-medium">2 ห้องนอน</p>
+                    </div>
+                    <div class="text-center border-l border-gray-100">
+                        <div class="text-green-600 mb-1">🚿</div>
+                        <p class="text-sm font-medium">2 ห้องน้ำ</p>
+                    </div>
+                    <div class="text-center border-l border-gray-100">
+                        <div class="text-green-600 mb-1">🚗</div>
+                        <p class="text-sm font-medium">มีที่จอดรถ</p>
+                    </div>
+                    <div class="text-center border-l border-gray-100">
+                        <div class="text-green-600 mb-1">🌬️</div>
+                        <p class="text-sm font-medium">แอร์ + ระบายอากาศ</p>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mt-8 space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">รายละเอียดบ้าน</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 leading-relaxed">
+                            <li><strong>ห้องนอนใหญ่:</strong> กว้างขวาง มีเครื่องปรับอากาศเย็นสบาย</li>
+                            <li><strong>ห้องนอนเล็ก:</strong> เหมาะสำหรับทำห้องทำงาน หรือห้องนอนสำรอง</li>
+                            <li><strong>ระบบระบายอากาศ:</strong> ทุกห้องน้ำติดตั้งพัดลมระบายอากาศ ไม่อับชื้น</li>
+                            <li><strong>ความสะดวก:</strong> ติดตั้งปั้มน้ำเรียบร้อย น้ำไหลแรงสม่ำเสมอ</li>
+                            <li><strong>ความปลอดภัย:</strong> เข้า-ออกหมู่บ้านด้วยระบบคีย์การ์ด สะดวกและปลอดภัย</li>
+                        </ul>
+                    </div>
+
+                    <div id="full-gallery" class="bg-green-50 p-6 rounded-xl border-l-4 border-green-600">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">จุดเด่นที่เหนือกว่า</h3>
+                        <p class="text-gray-700">
+                            <strong>บ้านหลังสุดท้ายสุดซอย:</strong> ให้ความเป็นส่วนตัวสูง เงียบสงบ ไม่มีเสียงรถวิ่งผ่านหน้าบ้านพลุกพล่าน<br>
+                            <strong>ทำเลทอง:</strong> หน้าบ้านติดรั้วโครงการและติดริมคลองแสนแสบ รับลม อากาศถ่ายเทดีมาก<br>
+                            <strong>หมดปัญหาที่จอดรถ:</strong> หน้าบ้านไม่ติดกับบ้านใคร ไม่ต้องกังวลเรื่องการจอดรถขวางหน้าบ้านกัน
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">เงื่อนไขการเช่า</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                                <p class="text-gray-500 text-sm">เงินประกัน</p>
+                                <p class="text-lg font-bold">2 เดือน</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                                <p class="text-gray-500 text-sm">จ่ายล่วงหน้า</p>
+                                <p class="text-lg font-bold">1 เดือน</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="flex flex-col md:flex-row gap-4 mb-12">
+            <a href="tel:0995914032" class="flex-1 bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold text-lg shadow-lg transition duration-300 flex items-center justify-center">
+                📞 โทรติดต่อ: 099-591-4032
+            </a>
+            <a href="https://maps.app.goo.gl/LR9QS5ugM2BnCg7j6" target="_blank" class="flex-1 bg-white border-2 border-green-600 text-green-700 text-center py-4 rounded-xl font-bold text-lg hover:bg-green-50 transition duration-300 flex items-center justify-center">
+                📍 ดูตำแหน่งใน Google Maps
+            </a>
+        </div>
+
+        <footer class="text-center text-gray-500 text-sm">
+            <p>© พฤกษาวิลล์ 5 - ทาวน์เฮ้าส์ให้เช่า สภาพดี ราคาคุ้มค่า</p>
+        </footer>
+    </main>
+
+    <script>
+        let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = 4;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.style.backgroundColor = index === currentSlide ? 'white' : 'rgba(255, 255, 255, 0.5)';
+                dot.style.width = index === currentSlide ? '24px' : '12px';
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        // Initialize indicators
+        updateSlider();
+    </script>
+</body>
+</html>
