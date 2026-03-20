@@ -3,226 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เช่าทาวน์เฮ้าส์ พฤกษาวิลล์ 5 - บรรยากาศดี เงียบสงบ</title>
+    <title>ขายทาวน์เฮ้าส์ พฤกษาวิลล์ 5 - 1.89 ล้านบาท พื้นที่ใหญ่พิเศษ</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Kanit', sans-serif; }
-        .slider-container {
+        body { font-family: 'Prompt', sans-serif; }
+        .aspect-ratio-16-9 { aspect-ratio: 16 / 9; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { 
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+            overflow-x: auto; 
             display: flex;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .slider-item {
-            min-width: 100%;
+        /* บังคับให้ปุ่มลูกศรอยู่บนสุดและเห็นชัด */
+        .nav-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 50;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        .dot-active {
-            width: 1.5rem !important;
-            background-color: white !important;
+        .nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <!-- Header -->
-    <header class="bg-green-700 text-white py-14 px-4 text-center shadow-md border-b-4 border-green-800">
-        <h1 class="text-3xl md:text-5xl font-bold mb-3">ให้เช่าทาวน์เฮ้าส์ 2 ชั้น ถ.ประชาร่วมใจ เขตมีนบุรี</h1>
-        <p class="text-xl md:text-2xl text-green-100 font-light">หมู่บ้านพฤกษาวิลล์ 5 (หลังสุดท้าย สุดซอย)</p>
+    <header class="bg-green-700 text-white py-10 px-4 text-center shadow-lg">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">ขายทาวน์เฮ้าส์ หมู่บ้านพฤกษาวิลล์ 5 ราคา 1.89 ล้านบาท  พื้นที่ใหญ่พิเศษ</h1>
+        <p class="text-lg opacity-90">หมู่บ้านพฤกษาวิลล์ 5 ถ.ประชาร่วมใจ มีนบุรี</p>
     </header>
 
-    <main class="max-w-4xl mx-auto p-4 md:p-8">
+    <main class="max-w-5xl mx-auto p-4 md:p-8">
         
-        <!-- Image Slider Area -->
-        <div class="mb-8 group">
-            <div class="relative overflow-hidden rounded-3xl shadow-2xl bg-slate-200">
-                <div id="slider" class="slider-container">
-                    <!-- รูปภาพ 1-8 ดึงจากโฟลเดอร์ images -->
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/1.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 1">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/2.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 2">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/3.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 3">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/4.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 4">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/5.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 5">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/6.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 6">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/7.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 7">
-                    </div>
-                    <div class="slider-item h-[300px] md:h-[550px]">
-                        <img src="images/8.jpg" onerror="handleImageError(this)" class="w-full h-full object-cover" alt="รูปที่ 8">
-                    </div>
-                </div>
-
-                <!-- Navigation -->
-                <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        <section class="bg-white rounded-2xl shadow-sm overflow-hidden mb-8">
+            <div class="relative bg-black flex items-center justify-center aspect-ratio-16-9">
+                <img id="mainDisplay" src="images/1.jpg" class="max-h-full object-contain" alt="House Image">
+                
+                <button onclick="changeImage(-1)" class="nav-btn absolute left-4 top-1/2 -translate-y-1/2" aria-label="Previous">
+                    ❮
                 </button>
-                <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <button onclick="changeImage(1)" class="nav-btn absolute right-4 top-1/2 -translate-y-1/2" aria-label="Next">
+                    ❯
                 </button>
-
-                <div class="absolute top-4 right-4 bg-black/60 text-white px-4 py-1 rounded-full text-sm font-medium backdrop-blur-md">
-                    <span id="current-index">1</span> / 8
-                </div>
-
-                <div id="dot-container" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2"></div>
             </div>
-            <div id="image-warning" class="hidden mt-4 p-4 bg-amber-50 border border-amber-200 text-amber-700 text-sm rounded-xl text-center">
-                💡 หมายเหตุ: หากรูปภาพไม่แสดงบนหน้าเว็บ โปรดลองรีเฟรชหรือตรวจสอบชื่อไฟล์ในโฟลเดอร์ images (ต้องเป็น .jpg ตัวพิมพ์เล็ก)
+            
+            <div class="p-4 bg-white border-t">
+                <p class="text-sm text-slate-500 mb-2">เลือกรูปภาพหรือกดลูกศร (เลื่อนซ้าย-ขวาได้):</p>
+                <div id="thumbContainer" class="flex flex-nowrap gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing w-full">
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Rental Info Card -->
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden mb-8 border border-slate-100">
-            <div class="p-6 md:p-10">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                    <div>
-                        <span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-wider">พร้อมเข้าอยู่ 9 มีนาคม</span>
-                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">พื้นที่ 22 ตร.วา <br class="md:hidden"> หน้าบ้านไม่ติดใคร สภาพดี บรรยากาศเงียบสงบ</h2>
-                    </div>
-                    <div class="bg-green-50 p-4 rounded-2xl border border-green-100 text-center md:text-right">
-                        <p class="text-slate-500 text-xs uppercase font-bold tracking-widest mb-1">ค่าเช่าเดือนละ</p>
-                        <p class="text-4xl font-extrabold text-green-600">8,000 <span class="text-lg font-normal text-slate-400">บาท</span></p>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-green-600">
+                <h2 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                    <span class="mr-2">🏠</span> ข้อมูลตัวบ้าน
+                </h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> พื้นที่ 22 ตร.วา (ใหญ่กว่าปกติ) จอดรถสบายๆ</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> ห้องนอนใหญ่และเล็กรวมสามห้อง</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> พัดลมระบายอากาศในห้องน้ำทุกห้อง</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> กันสาด Metalsheet</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> ปั้มน้ำและแทงค์น้ำติดตั้งพร้อมใช้งาน</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> ภายในต้อง renovate</li>
+                    <li class="flex items-start font-semibold text-green-700"><span class="text-green-600 mr-2">●</span> สภาพดี บรรยากาศเงียบสงบ</li>
+                </ul>
+            </div>
 
-                <!-- Features Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div class="bg-slate-50 p-4 rounded-2xl text-center">
-                        <span class="text-3xl block mb-2">🛏️</span>
-                        <p class="text-sm font-bold text-slate-700">2 ห้องนอน</p>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-2xl text-center">
-                        <span class="text-3xl block mb-2">🚿</span>
-                        <p class="text-sm font-bold text-slate-700">2 ห้องน้ำ</p>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-2xl text-center">
-                        <span class="text-3xl block mb-2">🚗</span>
-                        <p class="text-sm font-bold text-slate-700">มีที่จอดรถ</p>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-2xl text-center">
-                        <span class="text-3xl block mb-2">🌬️</span>
-                        <p class="text-sm font-bold text-slate-700">แอร์ + ปั้มน้ำ</p>
-                    </div>
-                </div>
-
-                <!-- Details Section -->
-                <div class="grid md:grid-cols-2 gap-10">
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center">
-                            <span class="w-8 h-8 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mr-3">✓</span>
-                            ข้อมูลตัวบ้าน
-                        </h3>
-                        <ul class="space-y-3 text-slate-600 font-light">
-                            <li class="flex items-center"><span class="mr-2 text-green-500">●</span> ห้องนอนใหญ่พร้อมเครื่องปรับอากาศ</li>
-                            <li class="flex items-center"><span class="mr-2 text-green-500">●</span> พัดลมระบายอากาศในห้องน้ำทุกห้อง</li>
-                            <li class="flex items-center"><span class="mr-2 text-green-500">●</span> ปั้มน้ำติดตั้งพร้อมใช้งาน</li>
-                            <li class="flex items-center"><span class="mr-2 text-green-500">●</span> สภาพบ้านสะอาดดูแลอย่างดี</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center">
-                            <span class="w-8 h-8 bg-green-100 text-green-700 rounded-lg flex items-center justify-center mr-3">★</span>
-                            ทำเลและจุดเด่น
-                        </h3>
-                        <ul class="space-y-3 text-slate-600 font-light">
-                            <li class="flex items-start"><span class="mr-2 text-green-500 mt-1">●</span> หลังสุดท้ายสุดซอย เป็นส่วนตัว</li>
-                            <li class="flex items-start"><span class="mr-2 text-green-500 mt-1">●</span> ติดรั้วโครงการ ติดคลองแสนแสบ ลมดี</li>
-                            <li class="flex items-start"><span class="mr-2 text-green-500 mt-1">●</span> จอดรถสะดวก หน้าบ้านไม่ขวางใคร</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-green-600">
+                <h2 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                    <span class="mr-2">📍</span> ทำเลและจุดเด่น
+                </h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> หลังสุดท้ายสุดซอย เป็นส่วนตัว หน้าบ้านไม่ติดใคร ไม่ต้องทะเลาะกับใครเรื่องที่จอดรถ</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> ติดรั้วโครงการ ติดคลองแสนแสบ ลมดี</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> จอดรถสะดวก หน้าบ้านไม่ขวางใคร</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> เพื่อนบ้านดีซ้ายขวา ไม่มีปัญหา ในซอยมีแค่หกหลัง</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> อยู่ใกล้ HomePro, Lotus เดินทางสะดวก</li>
+                    <li class="flex items-start"><span class="text-green-600 mr-2">●</span> ในซอยมีเพียง 6 หลัง เพื่อนบ้านดี ไม่มีปัญหาเรื่องที่จอดรถ</li>
+                     <li class="flex items-start"><span class="text-green-600 mr-2">●</span> อยู่ใกล้โรงเรียนนานาชาติ ถนนประชาร่วมใจใหญ่มาก สี่เลน</li>
+                    <li class="flex items-start font-semibold text-blue-600"><span class="text-blue-600 mr-2">●</span> น้ำไม่ท่วม ยามรักษาความปลอดภัยดี</li>
+                </ul>
             </div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
-            <a href="tel:0995914032" class="bg-green-600 hover:bg-green-700 text-white text-center py-5 rounded-2xl font-bold text-xl shadow-lg transform transition active:scale-95">
-                📞 โทรติดต่อ: 099-591-4032
-            </a>
-            <a href="https://maps.app.goo.gl/LR9QS5ugM2BnCg7j6" target="_blank" class="bg-white border-2 border-green-600 text-green-700 text-center py-5 rounded-2xl font-bold text-xl hover:bg-green-50 transition active:scale-95">
-                📍 เปิด Google Maps
-            </a>
-        </div>
+        <section class="mt-8 bg-green-50 border border-green-200 p-8 rounded-3xl text-center">
+            <h3 class="text-xl font-semibold text-green-900 mb-4">สนใจติดต่อสอบถาม หรือนัดดูบ้าน</h3>
+            <div class="text-3xl font-bold text-green-700 mb-6 tracking-wide">
+                <a href="tel:0995914032">099-591-4032</a>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://maps.google.com" target="_blank" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-md flex items-center justify-center">
+                    <span class="mr-2">📍</span> กดดู Google Map
+                </a>
+            </div>
+        </section>
 
-        <footer class="text-center text-slate-400 text-sm mb-10">
-            <p>© พฤกษาวิลล์ 5 - ทาวน์เฮ้าส์ให้เช่าบรรยากาศส่วนตัว</p>
-        </footer>
     </main>
 
+    <footer class="py-10 text-center text-slate-400 text-xs">
+        © 2026 หมู่บ้านพฤกษาวิลล์ 5 ประชาร่วมใจ มีนบุรี
+    </footer>
+
     <script>
-        let currentSlide = 0;
-        const slider = document.getElementById('slider');
-        const slides = document.querySelectorAll('.slider-item');
-        const dotContainer = document.getElementById('dot-container');
-        const currentIndexEl = document.getElementById('current-index');
-        const totalSlides = slides.length;
+        const imageFiles = [
+            '1.jpg', '2.jpg', '3.jpg', 
+            '736560.jpg', '736561.jpg', '736562.jpg', '736563.jpg', 
+            '741009.jpg', '741010 (1).jpg', '741017.jpg', 
+            '741018 (1).jpg', '741019 (2).jpg', '741020.jpg'
+        ];
 
-        function handleImageError(img) {
-            document.getElementById('image-warning').classList.remove('hidden');
-            img.src = 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=80';
-            img.onerror = null;
-        }
+        let currentIndex = 0;
+        const mainDisplay = document.getElementById('mainDisplay');
+        const thumbContainer = document.getElementById('thumbContainer');
 
-        // Generate Dots
-        slides.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.className = `dot w-2 h-2 rounded-full bg-white/40 cursor-pointer transition-all duration-300`;
-            dot.onclick = () => jumpToSlide(i);
-            dotContainer.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.dot');
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            currentIndexEl.textContent = currentSlide + 1;
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.add('dot-active');
-                    dot.classList.remove('bg-white/40');
+        function updateActiveThumb(index) {
+            currentIndex = index;
+            const allThumbs = document.querySelectorAll('#thumbContainer img');
+            allThumbs.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('border-green-600', 'scale-105', 'ring-2', 'ring-green-500');
+                    thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                 } else {
-                    dot.classList.remove('dot-active');
-                    dot.classList.add('bg-white/40');
+                    thumb.classList.remove('border-green-600', 'scale-105', 'ring-2', 'ring-green-500');
                 }
             });
+            mainDisplay.src = `images/${imageFiles[index]}`;
         }
 
-        function moveSlide(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateSlider();
+        function changeImage(step) {
+            let newIndex = currentIndex + step;
+            if (newIndex >= imageFiles.length) newIndex = 0;
+            if (newIndex < 0) newIndex = imageFiles.length - 1;
+            updateActiveThumb(newIndex);
         }
 
-        function jumpToSlide(index) {
-            currentSlide = index;
-            updateSlider();
-        }
+        imageFiles.forEach((file, index) => {
+            const thumb = document.createElement('img');
+            thumb.src = `images/${file}`;
+            thumb.className = `h-20 w-32 object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-green-500 transition-all flex-shrink-0 shadow-sm`;
+            
+            thumb.onclick = function() {
+                updateActiveThumb(index);
+            };
 
-        updateSlider();
-
-        // Optional: Swipe support for mobile
-        let touchstartX = 0;
-        let touchendX = 0;
-        
-        slider.addEventListener('touchstart', e => {
-            touchstartX = e.changedTouches[0].screenX;
+            if(index === 0) thumb.classList.add('border-green-600', 'scale-105', 'ring-2', 'ring-green-500');
+            thumbContainer.appendChild(thumb);
         });
 
-        slider.addEventListener('touchend', e => {
-            touchendX = e.changedTouches[0].screenX;
-            if (touchstartX - touchendX > 50) moveSlide(1);
-            if (touchendX - touchstartX > 50) moveSlide(-1);
+        // Drag to Scroll
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        thumbContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            thumbContainer.classList.replace('cursor-grab', 'cursor-grabbing');
+            startX = e.pageX - thumbContainer.offsetLeft;
+            scrollLeft = thumbContainer.scrollLeft;
+        });
+        thumbContainer.addEventListener('mouseleave', () => { isDown = false; });
+        thumbContainer.addEventListener('mouseup', () => { 
+            isDown = false; 
+            thumbContainer.classList.replace('cursor-grabbing', 'cursor-grab');
+        });
+        thumbContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - thumbContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            thumbContainer.scrollLeft = scrollLeft - walk;
         });
     </script>
 </body>
-
 </html>
